@@ -36,6 +36,12 @@
 
 	<dependencies>
 		<dependency>
+			<groupId>com.zebrunner</groupId>
+			<artifactId>agent-testng</artifactId>
+			<version>1.9.0</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
 			<groupId>com.qaprosoft</groupId>
 			<artifactId>carina-core</artifactId>
 			<version>${carina-core_version}</version>
