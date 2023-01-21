@@ -30,28 +30,4 @@ services:
     restart: unless-stopped
     ports:
       - "8080:8080"
-    command: [ "--selenoid-uri", "http://localhost:8080/selenoid/" ]
-  reporting:
-    enabled: true
-    project-key: WEB
-    server:
-      hostname: http://localhost:8080/#/
-      access-token: u068ICyZstw0uMcj0168DZhb2TXJwbg3oXAGMUcfKZUYNeTXBv
-    run:
-      display-name: Nightly Regression Suite
-      build: 2.5.3.96-SNAPSHOT
-      environment: TEST-1
-      locale: en_US
-      retry-known-issues: false
-      treat-skips-as-failures: false
-      test-case-status:
-        on-pass: passed
-        on-fail: failed
-        on-skip: retest
-    notification:
-      notify-on-each-failure: true
-      slack-channels: automation, dev-team
-      ms-teams-channels: automation, qa-team
-      emails: boss@example.com
-    milestone:
-      name: Release 2.5.3
+    command: [ "--selenoid-uri", "http://selenoid:4444" ]
