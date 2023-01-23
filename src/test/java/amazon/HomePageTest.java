@@ -7,24 +7,24 @@ import org.testng.annotations.Test;
 import com.solvd.gui.amazon.components.filters.PriceEnum;
 
 public class HomePageTest extends AbstractTest {
-//    @Test
-//    public void amazonTest() {
-//        HomePage homePage = new HomePage(getDriver());
-//        homePage.open();
-//        Assert.assertTrue(homePage.isPageOpened(),"Amazon Home Page is not opened.");
-//
-//        TodayDealsPage todayDealsPage = homePage.openBooksListPage();
-//        Assert.assertTrue(todayDealsPage.isPageOpened(),"Today's deals Page is not opened.");
-//
-//        ProductsPage productsPage = todayDealsPage.openProductPage();
-//        Assert.assertTrue(productsPage.isPageOpened(),"Products Page is not opened.");
-//        CartPage cartPage = productsPage.openCartPage();
-//        homePage.clickCartPage();
-//        Assert.assertTrue(cartPage.isPageOpened(),"Cart Page is not opened.");
-//        cartPage.clickDeleteFromCartBtn();
-//        cartPage.pause(5);
-//
-//    }
+    @Test
+    public void amazonTest() {
+        HomePage homePage = new HomePage(getDriver());
+        homePage.open();
+        Assert.assertTrue(homePage.isPageOpened(),"Amazon Home Page is not opened.");
+
+        TodayDealsPage todayDealsPage = homePage.openBooksListPage();
+        Assert.assertTrue(todayDealsPage.isPageOpened(),"Today's deals Page is not opened.");
+
+        ProductsPage productsPage = todayDealsPage.openProductPage();
+        Assert.assertTrue(productsPage.isPageOpened(),"Products Page is not opened.");
+        CartPage cartPage = productsPage.openCartPage();
+        homePage.clickCartPage();
+        Assert.assertTrue(cartPage.isPageOpened(),"Cart Page is not opened.");
+        cartPage.clickDeleteFromCartBtn();
+        cartPage.pause(5);
+
+    }
 
     @Test
     public void amazonLaptopTest() {
