@@ -2,6 +2,9 @@
 <suite verbose="1" name="Carina Test - Amazon Home Page Test" parallel="methods">
 
     <parameter name="jenkinsJobName" value="Web-Demo-Test"/>
+    <parameter name="jenkinsJobType" value="api"/>
+    <parameter name="jenkinsEmail" value="test@qaprosoft.com"/>
+    <parameter name="jenkinsEnvironments" value="DEMO"/>
 
     <test name="Amazon Home Page Tests">
         <classes>
