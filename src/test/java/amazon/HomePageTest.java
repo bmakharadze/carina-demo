@@ -25,7 +25,7 @@ public class HomePageTest extends AbstractTest {
         cartPage.pause(5);
 
     }
-//
+
 //    @Test
 //    public void amazonLaptopTest() {
 //        HomePage homePage = new HomePage(getDriver());
@@ -47,4 +47,4 @@ public class HomePageTest extends AbstractTest {
 //        Assert.assertTrue(cartPage.isPageOpened(),"Cart Page is not opened.");
 //
 //    }
-//}
+}
