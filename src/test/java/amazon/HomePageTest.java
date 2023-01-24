@@ -45,6 +45,6 @@ public class HomePageTest extends AbstractTest {
 //        productsPage.clickXBtn();
 //        homePage.clickCartPage();
 //        Assert.assertTrue(cartPage.isPageOpened(),"Cart Page is not opened.");
-//sd
+//sdsdsd
 //    }
 }
