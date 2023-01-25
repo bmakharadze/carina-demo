@@ -26,25 +26,24 @@ public class HomePageTest extends AbstractTest {
 
     }
 
-//    @Test
-//    public void amazonLaptopTest() {
-//        HomePage homePage = new HomePage(getDriver());
-//        homePage.open();
-//        Assert.assertTrue(homePage.isPageOpened(),"Amazon Home Page is not opened.");
-//
-//        SearchedResultPage searchedResultPage = homePage.openSearchedResultPage("Laptop");
-//        Assert.assertTrue(searchedResultPage.isPageOpened(),"Search Page is not opened.");
-//        searchedResultPage.choosePriceFilters(PriceEnum.TO600);
-//        searchedResultPage.getAllProducts();
-//
-//        ProductsPage productsPage = searchedResultPage.clickProduct();
-//        Assert.assertTrue(productsPage.isPageOpened(),"Products Page is not opened.");
-//
-//        CartPage cartPage = productsPage.openCartPage();
-//        cartPage.pause(5);
-//        productsPage.clickXBtn();
-//        homePage.clickCartPage();
-//        Assert.assertTrue(cartPage.isPageOpened(),"Cart Page is not opened.");
-//sdsdsd
-//    }
+    @Test
+    public void amazonLaptopTest() {
+        HomePage homePage = new HomePage(getDriver());
+        homePage.open();
+        Assert.assertTrue(homePage.isPageOpened(),"Amazon Home Page is not opened.");
+
+        SearchedResultPage searchedResultPage = homePage.openSearchedResultPage("Laptop");
+        Assert.assertTrue(searchedResultPage.isPageOpened(),"Search Page is not opened.");
+        searchedResultPage.choosePriceFilters(PriceEnum.TO600);
+        searchedResultPage.getAllProducts();
+
+        ProductsPage productsPage = searchedResultPage.clickProduct();
+        Assert.assertTrue(productsPage.isPageOpened(),"Products Page is not opened.");
+
+        CartPage cartPage = productsPage.openCartPage();
+        cartPage.pause(5);
+        productsPage.clickXBtn();
+        homePage.clickCartPage();
+        Assert.assertTrue(cartPage.isPageOpened(),"Cart Page is not opened.");
+    }
 }

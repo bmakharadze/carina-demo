@@ -28,7 +28,7 @@ public class HomePage extends AbstractPage {
     }
 
     public TodayDealsPage openBooksListPage(){
-        changeLanguageBtn.click();
+        //changeLanguageBtn.click();
         todayDealsBtn.click();
         return new TodayDealsPage(getDriver());
     }
