@@ -14,7 +14,7 @@ public class HomePage extends AbstractPage {
 
     @FindBy(xpath = "//*[@id=\"nav-main\"]/div[1]/div/div/div[3]/span[1]/span/input")
     private ExtendedWebElement changeLanguageBtn;
-    @FindBy(xpath = "//div[@id='nav-xshop-container']/div/a[1]")
+    @FindBy(xpath = "//div[@id='nav-xshop-container']/div/a[6]")
     private ExtendedWebElement todayDealsBtn;
     @FindBy(xpath = "//*[@id=\"twotabsearchtextbox\"]")
     private ExtendedWebElement searchInput;
