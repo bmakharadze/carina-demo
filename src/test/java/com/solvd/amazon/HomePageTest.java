@@ -1,13 +1,22 @@
-package amazon;
+package com.solvd.amazon;
 
 import com.qaprosoft.carina.core.foundation.AbstractTest;
 import com.solvd.gui.amazon.pages.*;
+import com.zebrunner.agent.core.annotation.TestRailCaseId;
+import com.zebrunner.agent.core.registrar.TestRail;
 import org.testng.Assert;
+import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 import com.solvd.gui.amazon.components.filters.PriceEnum;
 
 public class HomePageTest extends AbstractTest {
+    @BeforeSuite
+    public void setUp() {
+        TestRail.setSuiteId("177");
+        TestRail.setAssignee("Beka Makharadze");
+    }
     @Test
+    @TestRailCaseId("3482")
     public void amazonTest() {
         HomePage homePage = new HomePage(getDriver());
         homePage.open();
@@ -27,6 +36,7 @@ public class HomePageTest extends AbstractTest {
     }
 
     @Test
+    @TestRailCaseId("3483")
     public void amazonLaptopTest() {
         HomePage homePage = new HomePage(getDriver());
         homePage.open();

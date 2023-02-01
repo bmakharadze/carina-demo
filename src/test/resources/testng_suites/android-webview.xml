@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite verbose="1" name="Carina Test - Amazon Android Web View Test" parallel="methods">
+
+    <parameter name="jenkinsJobName" value="Amazon-Android-Web-View-Test"/>
+    <parameter name="jenkinsJobType" value="android"/>
+
+    <test name="Amazon Android Web View Tests">
+        <classes>
+            <class name="com.solvd.amazon.carina.AndroidWebViewTest" />
+        </classes>
+    </test>
+
+</suite>
