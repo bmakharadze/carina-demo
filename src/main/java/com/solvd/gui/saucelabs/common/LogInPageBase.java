@@ -7,9 +7,11 @@ public abstract class LogInPageBase extends AbstractPage {
         super(driver);
     }
 
-    public abstract void typeUserName(String userName);
+    public abstract void typeUserName(String username);
 
     public abstract void typePassword(String password);
+
+    public abstract void login(String username, String password);
 
     public abstract HomePageBase clickLogInBtn();
 

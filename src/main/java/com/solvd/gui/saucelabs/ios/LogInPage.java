@@ -14,13 +14,13 @@ public class LogInPage extends LogInPageBase {
         super(driver);
     }
 
-    @ExtendedFindBy(accessibilityId = "//XCUIElementTypeTextField[@name=\"test-Username\"]")
+    @ExtendedFindBy(accessibilityId = "test-Username")
     private ExtendedWebElement usernameInput;
 
-    @ExtendedFindBy(accessibilityId = "//XCUIElementTypeSecureTextField[@name=\"test-Password\"]")
+    @ExtendedFindBy(accessibilityId = "test-Password")
     private ExtendedWebElement passwordInput;
 
-    @ExtendedFindBy(accessibilityId = "//XCUIElementTypeOther[@name=\"test-LOGIN\"]")
+    @ExtendedFindBy(accessibilityId = "test-LOGIN")
     private ExtendedWebElement loginBtn;
 
     @Override
@@ -35,6 +35,12 @@ public class LogInPage extends LogInPageBase {
 
     @Override
     public void typePassword(String password) {
+        passwordInput.type(password);
+    }
+
+    @Override
+    public void login(String username, String password){
+        usernameInput.type(username);
         passwordInput.type(password);
     }
 
