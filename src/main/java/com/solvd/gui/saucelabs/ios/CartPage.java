@@ -3,7 +3,8 @@ package com.solvd.gui.saucelabs.ios;
 import com.qaprosoft.carina.core.foundation.webdriver.decorator.ExtendedWebElement;
 import com.qaprosoft.carina.core.foundation.webdriver.locator.ExtendedFindBy;
 import com.solvd.gui.saucelabs.common.CartPageBase;
-import com.solvd.gui.saucelabs.common.WebViewPageBase;
+import com.solvd.gui.saucelabs.common.CheckoutPageBase;
+import com.solvd.gui.saucelabs.common.HomePageBase;
 import com.zebrunner.carina.utils.factory.DeviceType;
 import org.openqa.selenium.WebDriver;
 
@@ -23,6 +24,11 @@ public class CartPage extends CartPageBase {
     private ExtendedWebElement checkoutBtn;
 
     @Override
+    public boolean isPageOpened() {
+        return continueShoppingBtn.isElementPresent();
+    }
+
+    @Override
     public void clickRemoveFromCartBtn() {
         removeFromCartBtn.click();
     }
@@ -33,7 +39,8 @@ public class CartPage extends CartPageBase {
     }
 
     @Override
-    public void clickCheckoutBtn() {
+    public CheckoutPageBase clickCheckoutBtn() {
         checkoutBtn.click();
+        return initPage(getDriver(), CheckoutPageBase.class);
     }
 }

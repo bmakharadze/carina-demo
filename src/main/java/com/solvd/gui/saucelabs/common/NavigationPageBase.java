@@ -11,11 +11,11 @@ public abstract class NavigationPageBase extends AbstractPage {
 
     public abstract WebViewPageBase clickWebViewBtn();
 
-    public abstract void clickQrCodeScannerBtn();
+    public abstract QrCodeScannerPageBase clickQrCodeScannerBtn();
 
-    public abstract void clickGeoLocationBtn();
+    public abstract GeoLocationPageBase clickGeoLocationBtn();
 
-    public abstract void clickDrawingBtn();
+    public abstract DrawingPageBase clickDrawingBtn();
 
     public abstract void clickAboutBtn();
 

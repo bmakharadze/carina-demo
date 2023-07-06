@@ -19,6 +19,11 @@ public class WebViewPage extends WebViewPageBase {
     private ExtendedWebElement goToSiteBtn;
 
     @Override
+    public boolean isPageOpened() {
+        return goToSiteBtn.isElementPresent();
+    }
+
+    @Override
     public void urlInput(String url) {
         urlInput.type(url);
     }

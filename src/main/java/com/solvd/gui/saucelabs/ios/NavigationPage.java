@@ -2,9 +2,7 @@ package com.solvd.gui.saucelabs.ios;
 
 
 
-import com.solvd.gui.saucelabs.common.HomePageBase;
-import com.solvd.gui.saucelabs.common.NavigationPageBase;
-import com.solvd.gui.saucelabs.common.WebViewPageBase;
+import com.solvd.gui.saucelabs.common.*;
 import com.zebrunner.carina.utils.factory.DeviceType;
 import com.qaprosoft.carina.core.foundation.webdriver.decorator.ExtendedWebElement;
 import com.qaprosoft.carina.core.foundation.webdriver.locator.ExtendedFindBy;
@@ -58,18 +56,21 @@ public class NavigationPage extends NavigationPageBase {
     }
 
     @Override
-    public void clickQrCodeScannerBtn() {
+    public QrCodeScannerPageBase clickQrCodeScannerBtn() {
         qrCodeScannerBtn.click();
+        return initPage(getDriver(), QrCodeScannerPageBase.class);
     }
 
     @Override
-    public void clickGeoLocationBtn() {
+    public GeoLocationPageBase clickGeoLocationBtn() {
         geoLocationBtn.click();
+        return initPage(getDriver(), GeoLocationPageBase.class);
     }
 
     @Override
-    public void clickDrawingBtn() {
+    public DrawingPageBase clickDrawingBtn() {
         drawingBtn.click();
+        return initPage(getDriver(), DrawingPageBase.class);
     }
 
     @Override

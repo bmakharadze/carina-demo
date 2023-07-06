@@ -3,6 +3,7 @@ package com.solvd.gui.saucelabs.ios;
 import com.solvd.gui.saucelabs.common.CartPageBase;
 import com.solvd.gui.saucelabs.common.HomePageBase;
 import com.solvd.gui.saucelabs.common.NavigationPageBase;
+import com.solvd.gui.saucelabs.common.ProductPageBase;
 import com.solvd.gui.saucelabs.components.Filters;
 import com.zebrunner.carina.utils.factory.DeviceType;
 import com.qaprosoft.carina.core.foundation.webdriver.decorator.ExtendedWebElement;
@@ -21,13 +22,13 @@ public class HomePage extends HomePageBase {
     @ExtendedFindBy(accessibilityId = "test-Menu")
     private ExtendedWebElement navigationBtn;
 
-    @ExtendedFindBy(iosClassChain = "**/XCUIElementTypeStaticText[`label == 'PRODUCTS'`]")
-    private ExtendedWebElement productsTitle;
+    @ExtendedFindBy(iosClassChain = "**/XCUIElementTypeOther[$type == 'XCUIElementTypeStaticText' AND name == 'test-Item title' AND label == '%s'$][-3]")
+    private ExtendedWebElement product;
 
-    @ExtendedFindBy(iosClassChain = "**/XCUIElementTypeOther[`label == \"ADD TO CART\"`][2]")
+    @ExtendedFindBy(iosClassChain = "**/XCUIElementTypeOther[`label == 'ADD TO CART'`][%s]")
     private ExtendedWebElement productAddToCartBtn;
 
-    @ExtendedFindBy(iosClassChain = "**/XCUIElementTypeOther[`label == \"REMOVE\"`][2]")
+    @ExtendedFindBy(iosClassChain = "**/XCUIElementTypeOther[`label == \"REMOVE\"`][%s]")
     private ExtendedWebElement productRemoveBtn;
 
     @ExtendedFindBy(iosClassChain = "**/XCUIElementTypeOther[`name == \"test-Toggle\"`]")
@@ -41,23 +42,51 @@ public class HomePage extends HomePageBase {
 
     @Override
     public boolean isPageOpened() {
-        return productsTitle.isElementPresent();
-    }
-
-    @Override
-    public NavigationPageBase clickNavigationBtn() {
-        navigationBtn.click();
-        return initPage(getDriver(), NavigationPageBase.class);
+        return cartBtn.isElementPresent();
     }
 
     @Override
     public void clickAddToCartBtn(String product) {
-        productAddToCartBtn.format(product).click();
+        switch (product) {
+            case "Sauce Labs Backpack": {
+                String productId = "1";
+                productAddToCartBtn.format(productId).click();
+                break;
+            }
+            case "Sauce Labs Bike Light": {
+                String productId = "2";
+                productAddToCartBtn.format(productId).click();
+                break;
+            }
+            case "Sauce Labs Bolt T-Shirt": {
+                String productId = "3";
+                productAddToCartBtn.format(productId).click();
+                break;
+            }
+            case "Sauce Labs Fleece Jacket": {
+                String productId = "4";
+                productAddToCartBtn.format(productId).click();
+                break;
+            }
+        }
+
     }
 
     @Override
     public void clickRemoveBtn(String product) {
-        productRemoveBtn.format(product).click();
+        if (product.equals("Sauce Labs Backpack")) {
+            String productId = "1";
+            productRemoveBtn.format(productId).click();
+        } else if (product.equals("Sauce Labs Bike Light")) {
+            String productId = "2";
+            productRemoveBtn.format(productId).click();
+        } else if (product.equals("Sauce Labs Bolt T-Shirt")) {
+            String productId = "3";
+            productRemoveBtn.format(productId).click();
+        } else if (product.equals("Sauce Labs Fleece Jacket")) {
+            String productId = "4";
+            productRemoveBtn.format(productId).click();
+        }
     }
 
     @Override
@@ -71,24 +100,27 @@ public class HomePage extends HomePageBase {
     }
 
     @Override
+    public void filterBy(Filters filterBy) {
+        filter.format(filterBy.getFilter()).click();
+    }
+
+    @Override
     public CartPageBase clickCartBtn() {
         cartBtn.click();
         return initPage(getDriver(), CartPageBase.class);
     }
 
     @Override
-    public void filterBy(Filters filterBy) {
-        filter.format(filterBy.getFilter()).click();
+    public ProductPageBase clickProduct(String productName) {
+        product.format(productName).click();
+        return initPage(getDriver(), ProductPageBase.class);
     }
 
     @Override
-    public boolean isAddToCartBtnPresent(String product) {
-        return productAddToCartBtn.format(product).isElementPresent();
+    public NavigationPageBase clickNavigationBtn() {
+        navigationBtn.click();
+        return initPage(getDriver(), NavigationPageBase.class);
     }
 
-    @Override
-    public boolean isRemoveBtnPresent(String product) {
-        return productRemoveBtn.format(product).isElementPresent();
-    }
 
 }

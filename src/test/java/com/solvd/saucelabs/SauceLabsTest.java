@@ -3,15 +3,18 @@ package com.solvd.saucelabs;
 import com.qaprosoft.carina.core.foundation.IAbstractTest;
 import com.solvd.gui.saucelabs.common.*;
 import com.solvd.gui.saucelabs.components.Filters;
+import jdk.jfr.Description;
 import org.testng.Assert;
-import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class SauceLabsTest implements IAbstractTest {
 
+    //Filtering the products may cause errors.
+
     private HomePageBase homePage;
-    //Every test needs log in before running test.
-    @BeforeClass
+    @Description("Set up, Every test needs log in before running test.")
+    @BeforeMethod
     public void setUp() {
         LogInPageBase loginPage = initPage(getDriver(), LogInPageBase.class);
         Assert.assertTrue(loginPage.isPageOpened(), "Login page is not opened");
@@ -20,24 +23,24 @@ public class SauceLabsTest implements IAbstractTest {
         Assert.assertTrue(homePage.isPageOpened(), "Home page is not opened");
     }
 
+    @Description("")
     @Test
     public void addToCartTest() {
         String product = "Sauce Labs Backpack";
-        Assert.assertTrue(homePage.isPageOpened(), "Home page is not opened");
-        homePage.isAddToCartBtnPresent(product);
         homePage.clickAddToCartBtn(product);
-        homePage.clickFilterBtn();
-        homePage.filterBy(Filters.NAME_AZ);
     }
 
-    //Run separately
     @Test
-    public void removeFromFromCartHomePageTest() {
+    public void filterProductsTest(){
+        homePage.clickFilterBtn();
+        homePage.filterBy(Filters.PRICE_LOW);
+        homePage.pause(5);
+    }
+
+    @Test
+    public void removeFromCartHomePageTest() {
         String product = "Sauce Labs Backpack";
-        Assert.assertTrue(homePage.isPageOpened(), "Home page is not opened");
-        homePage.isAddToCartBtnPresent(product);
         homePage.clickAddToCartBtn(product);
-        homePage.isRemoveBtnPresent(product);
         homePage.clickRemoveBtn(product);
     }
 
@@ -53,11 +56,34 @@ public class SauceLabsTest implements IAbstractTest {
 
     @Test
     public void checkoutTest(){
-        Assert.assertTrue(homePage.isPageOpened(), "Home page is not opened");
         String product = "Sauce Labs Backpack";
         homePage.clickAddToCartBtn(product);
         CartPageBase cartPage = homePage.clickCartBtn();
-        cartPage.clickCheckoutBtn();
+        Assert.assertTrue(cartPage.isPageOpened(), "Cart page is not opened");
+        CheckoutPageBase checkoutPage = cartPage.clickCheckoutBtn();
+        Assert.assertTrue(checkoutPage.isPageOpened(), "Checkout page is not opened");
+        checkoutPage.fillCheckoutInputs("becca", "m", "6000");
+        checkoutPage.clickContinueBtn();
+        checkoutPage.clickFinishBtn();
     }
 
+    @Test
+    public void addProductToCartFromProductPageTest(){
+        String product = "Sauce Labs Backpack";
+        ProductPageBase productPage = homePage.clickProduct(product);
+        Assert.assertTrue(productPage.isPageOpened(), "Product page is not opened");
+        productPage.clickAddToCart();
+    }
+
+
+    @Test
+    public void allowGeoLocationAndGetCoordinatesTest(){
+        NavigationPageBase navigationPage = homePage.clickNavigationBtn();
+        Assert.assertTrue(navigationPage.isPageOpened(), "Navigation page is not opened");
+        GeoLocationPageBase geoLocationPage = navigationPage.clickGeoLocationBtn();
+        Assert.assertTrue(geoLocationPage.isPageOpened(), "Geo Location page is not opened");
+        geoLocationPage.clickAllowOnceBtn();
+        geoLocationPage.getGeoLocation();
+        geoLocationPage.pause(5);
+    }
 }
