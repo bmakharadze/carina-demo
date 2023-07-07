@@ -9,6 +9,7 @@ import com.zebrunner.carina.utils.factory.DeviceType;
 import com.qaprosoft.carina.core.foundation.webdriver.decorator.ExtendedWebElement;
 import com.qaprosoft.carina.core.foundation.webdriver.locator.ExtendedFindBy;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.FindBy;
 
 @DeviceType(pageType = DeviceType.Type.IOS_PHONE, parentClass = HomePageBase.class)
 public class HomePage extends HomePageBase {
@@ -39,6 +40,12 @@ public class HomePage extends HomePageBase {
 
     @ExtendedFindBy(iosClassChain = "**/XCUIElementTypeOther[`name == \"test-Cart\"`]/XCUIElementTypeOther")
     private ExtendedWebElement cartBtn;
+
+    @FindBy(xpath = "(//XCUIElementTypeOther[@name=\"test-Drag Handle\"])[1]")
+    private ExtendedWebElement dragBtn;
+
+    @FindBy(xpath = "//XCUIElementTypeStaticText[@name=\"PRODUCTS\"]")
+    private ExtendedWebElement dropBtn;
 
     @Override
     public boolean isPageOpened() {
@@ -122,5 +129,9 @@ public class HomePage extends HomePageBase {
         return initPage(getDriver(), NavigationPageBase.class);
     }
 
+    @Override
+    public void dragAndDrop(){
+        dragAndDrop(dragBtn, dropBtn);
+    }
 
 }

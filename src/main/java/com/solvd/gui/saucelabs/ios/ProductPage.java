@@ -8,6 +8,7 @@ import org.openqa.selenium.WebDriver;
 
 @DeviceType(pageType = DeviceType.Type.IOS_PHONE, parentClass = ProductPageBase.class)
 public class ProductPage extends ProductPageBase {
+
     public ProductPage(WebDriver driver) {
         super(driver);
     }
@@ -15,14 +16,23 @@ public class ProductPage extends ProductPageBase {
     @ExtendedFindBy(accessibilityId = "test-ADD TO CART")
     private ExtendedWebElement addToCartBtn;
 
+    @ExtendedFindBy(accessibilityId = "test-Price")
+    private ExtendedWebElement price;
+
     @Override
     public boolean isPageOpened() {
         return addToCartBtn.isElementPresent();
     }
+
     @Override
     public void clickAddToCart() {
         swipe(addToCartBtn);
         addToCartBtn.click();
+    }
+
+    @Override
+    public void getPrice(){
+        price.getText();
     }
 
 }

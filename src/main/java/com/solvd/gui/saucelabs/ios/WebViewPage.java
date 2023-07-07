@@ -2,6 +2,8 @@ package com.solvd.gui.saucelabs.ios;
 
 import com.qaprosoft.carina.core.foundation.webdriver.decorator.ExtendedWebElement;
 import com.qaprosoft.carina.core.foundation.webdriver.locator.ExtendedFindBy;
+import com.solvd.gui.saucelabs.common.HomePageBase;
+import com.solvd.gui.saucelabs.common.WebViewAmazonBase;
 import com.solvd.gui.saucelabs.common.WebViewPageBase;
 import com.zebrunner.carina.utils.factory.DeviceType;
 import org.openqa.selenium.WebDriver;
@@ -29,8 +31,9 @@ public class WebViewPage extends WebViewPageBase {
     }
 
     @Override
-    public void clickGoToSiteBtn() {
+    public WebViewAmazonBase clickGoToSiteBtn() {
         goToSiteBtn.click();
+        return initPage(getDriver(), WebViewAmazonBase.class);
     }
 
 }

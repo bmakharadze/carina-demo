@@ -24,4 +24,5 @@ public abstract class NavigationPageBase extends AbstractPage {
     public abstract void clickResetAppBtn();
 
 
+    public abstract void clickCloseBtn();
 }

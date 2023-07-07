@@ -26,5 +26,5 @@ public abstract class HomePageBase extends AbstractPage implements IMobileUtils 
 
     public abstract NavigationPageBase clickNavigationBtn();
 
-
+    public abstract void dragAndDrop();
 }

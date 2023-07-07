@@ -9,4 +9,7 @@ public abstract class QrCodeScannerPageBase extends AbstractPage {
         super(driver);
     }
 
+    public abstract void clickOkBtn();
+
+    public abstract void clickDoNotAllowBtn();
 }

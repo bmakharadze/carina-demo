@@ -1,7 +1,5 @@
 package com.solvd.gui.saucelabs.ios;
 
-
-
 import com.solvd.gui.saucelabs.common.*;
 import com.zebrunner.carina.utils.factory.DeviceType;
 import com.qaprosoft.carina.core.foundation.webdriver.decorator.ExtendedWebElement;
@@ -37,6 +35,9 @@ public class NavigationPage extends NavigationPageBase {
 
     @ExtendedFindBy(accessibilityId = "test-RESET APP STATE")
     private ExtendedWebElement resetAppBtn;
+
+    @ExtendedFindBy(accessibilityId = "test-Close")
+    private ExtendedWebElement closeBtn;
 
     @Override
     public boolean isPageOpened() {
@@ -86,6 +87,11 @@ public class NavigationPage extends NavigationPageBase {
     @Override
     public void clickResetAppBtn() {
         resetAppBtn.click();
+    }
+
+    @Override
+    public void clickCloseBtn() {
+        closeBtn.click();
     }
 
 }

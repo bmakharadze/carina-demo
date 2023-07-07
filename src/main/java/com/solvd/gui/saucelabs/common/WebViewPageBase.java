@@ -10,5 +10,5 @@ public abstract class WebViewPageBase extends AbstractPage {
 
     public abstract void urlInput(String url);
 
-    public abstract void clickGoToSiteBtn();
+    public abstract WebViewAmazonBase clickGoToSiteBtn();
 }
