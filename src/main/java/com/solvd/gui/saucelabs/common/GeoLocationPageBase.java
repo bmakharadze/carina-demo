@@ -4,6 +4,7 @@ import com.qaprosoft.carina.core.gui.AbstractPage;
 import org.openqa.selenium.WebDriver;
 
 public abstract class GeoLocationPageBase extends AbstractPage {
+
     public GeoLocationPageBase(WebDriver driver) {
         super(driver);
     }
@@ -15,5 +16,6 @@ public abstract class GeoLocationPageBase extends AbstractPage {
     public abstract void clickDoNotAllowBtn();
 
     public abstract void getGeoLocation();
+
 }
 

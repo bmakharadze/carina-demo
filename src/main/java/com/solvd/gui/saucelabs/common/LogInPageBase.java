@@ -3,6 +3,7 @@ import com.qaprosoft.carina.core.gui.AbstractPage;
 import org.openqa.selenium.WebDriver;
 
 public abstract class LogInPageBase extends AbstractPage {
+
     public LogInPageBase(WebDriver driver) {
         super(driver);
     }
@@ -14,5 +15,6 @@ public abstract class LogInPageBase extends AbstractPage {
     public abstract void login(String username, String password);
 
     public abstract HomePageBase clickLogInBtn();
+
 
 }

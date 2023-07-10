@@ -5,6 +5,7 @@ import com.zebrunner.carina.utils.mobile.IMobileUtils;
 import org.openqa.selenium.WebDriver;
 
 public abstract class DrawingPageBase extends AbstractPage implements IMobileUtils {
+
     public DrawingPageBase(WebDriver driver) {
         super(driver);
     }
@@ -19,7 +20,7 @@ public abstract class DrawingPageBase extends AbstractPage implements IMobileUti
 
     public abstract void clickDoNotAllow();
 
-    public abstract void clickGoBtn();
+    public abstract void clickOkBtn();
 
     public abstract void draw(Direction direction, int duration);
 

@@ -15,4 +15,5 @@ public abstract class CheckoutPageBase extends AbstractPage implements IMobileUt
     public abstract void fillCheckoutInputs(String firstName, String lastName, String zipCode);
 
     public abstract void clickFinishBtn();
+
 }

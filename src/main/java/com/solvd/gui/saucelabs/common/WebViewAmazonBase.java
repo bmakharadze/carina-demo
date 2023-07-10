@@ -4,6 +4,7 @@ import com.qaprosoft.carina.core.gui.AbstractPage;
 import org.openqa.selenium.WebDriver;
 
 public abstract class WebViewAmazonBase extends AbstractPage {
+
     public WebViewAmazonBase(WebDriver driver) {
         super(driver);
     }

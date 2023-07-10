@@ -8,6 +8,7 @@ import org.openqa.selenium.WebDriver;
 
 @DeviceType(pageType = DeviceType.Type.IOS_PHONE, parentClass = NavigationPageBase.class)
 public class NavigationPage extends NavigationPageBase {
+
     public NavigationPage(WebDriver driver) {
         super(driver);
     }

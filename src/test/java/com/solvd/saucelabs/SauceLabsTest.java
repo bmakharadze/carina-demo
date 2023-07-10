@@ -29,26 +29,26 @@ public class SauceLabsTest implements IAbstractTest {
         homePage.clickAddToCartBtn(product);
     }
 
-    @Test(description = "")
+    @Test(description = "Drag and drop product to the cart")
     public void dragAndDropProductToTheCartTest() {
         homePage.dragAndDrop();
     }
 
-    @Test(description = "")
-    public void filterProductsTest(){
+    @Test(description = "Filter products by price")
+    public void filterProductsTest() {
         homePage.clickFilterBtn();
         homePage.filterBy(Filters.PRICE_LOW);
         homePage.pause(5);
     }
 
-    @Test(description = "")
+    @Test(description = "Remove product from the cart on Home page")
     public void removeFromCartHomePageTest() {
         String product = "Sauce Labs Backpack";
         homePage.clickAddToCartBtn(product);
         homePage.clickRemoveBtn(product);
     }
 
-    @Test(description = "")
+    @Test(description = "Navigate to WebView and open a website")
     public void webViewScreenTest() {
         NavigationPageBase navigationPage = homePage.clickNavigationBtn();
         Assert.assertTrue(navigationPage.isPageOpened(), "Navigation page is not opened");
@@ -59,8 +59,8 @@ public class SauceLabsTest implements IAbstractTest {
         webViewPage.pause(4);
     }
 
-    @Test(description = "")
-    public void checkoutTest(){
+    @Test(description = "Perform checkout process")
+    public void checkoutTest() {
         String product = "Sauce Labs Backpack";
         homePage.clickAddToCartBtn(product);
         CartPageBase cartPage = homePage.clickCartBtn();
@@ -72,17 +72,16 @@ public class SauceLabsTest implements IAbstractTest {
         checkoutPage.clickFinishBtn();
     }
 
-    @Test(description = "")
-    public void addProductToCartFromProductPageTest(){
+    @Test(description = "Add product to cart from product page")
+    public void addProductToCartFromProductPageTest() {
         String product = "Sauce Labs Backpack";
         ProductPageBase productPage = homePage.clickProduct(product);
         Assert.assertTrue(productPage.isPageOpened(), "Product page is not opened");
         productPage.clickAddToCart();
     }
 
-
-    @Test(description = "")
-    public void allowGeoLocationAndGetCoordinatesTest(){
+    @Test(description = "Allow geolocation and get coordinates")
+    public void allowGeoLocationAndGetCoordinatesTest() {
         NavigationPageBase navigationPage = homePage.clickNavigationBtn();
         Assert.assertTrue(navigationPage.isPageOpened(), "Navigation page is not opened");
         GeoLocationPageBase geoLocationPage = navigationPage.clickGeoLocationBtn();
@@ -92,14 +91,15 @@ public class SauceLabsTest implements IAbstractTest {
         geoLocationPage.pause(5);
     }
 
-    @Test(description = "")
-    public void drawingTest(){
+    @Test(description = "Perform drawing on the page")
+    public void drawingTest() {
         NavigationPageBase navigationPage = homePage.clickNavigationBtn();
         Assert.assertTrue(navigationPage.isPageOpened(), "Navigation page is not opened");
         DrawingPageBase drawingPage = navigationPage.clickDrawingBtn();
-        Assert.assertTrue(drawingPage.isPageOpened(), "Navigation page is not opened");
+        Assert.assertTrue(drawingPage.isPageOpened(), "Drawing page is not opened");
         drawingPage.draw(IMobileUtils.Direction.DOWN, 3000);
         drawingPage.clickSaveBtn();
+        drawingPage.clickDoNotAllow();
     }
 
     @Test(description = "Testing amazon from Web View page, Searching product and adding to cart.")

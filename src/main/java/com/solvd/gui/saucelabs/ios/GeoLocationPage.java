@@ -8,6 +8,7 @@ import org.openqa.selenium.WebDriver;
 
 @DeviceType(pageType = DeviceType.Type.IOS_PHONE, parentClass = GeoLocationPageBase.class)
 public class GeoLocationPage extends GeoLocationPageBase {
+
     public GeoLocationPage(WebDriver driver) {
         super(driver);
     }
@@ -31,6 +32,7 @@ public class GeoLocationPage extends GeoLocationPageBase {
     public boolean isPageOpened() {
         return allowOnceBtn.isElementPresent();
     }
+
     @Override
     public void clickAllowOnceBtn() {
         allowOnceBtn.click();
@@ -52,4 +54,5 @@ public class GeoLocationPage extends GeoLocationPageBase {
         String lon = longitude.getText();
         System.out.println("Geo Location is: \n latitude: " + lat + " \n longitude: " + lon);
     }
+
 }

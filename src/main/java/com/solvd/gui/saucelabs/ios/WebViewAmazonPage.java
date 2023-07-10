@@ -9,6 +9,7 @@ import org.openqa.selenium.WebDriver;
 
 @DeviceType(pageType = DeviceType.Type.IOS_PHONE, parentClass = WebViewAmazonBase.class)
 public class WebViewAmazonPage extends WebViewAmazonBase {
+
     public WebViewAmazonPage(WebDriver driver) {
         super(driver);
     }
@@ -36,6 +37,5 @@ public class WebViewAmazonPage extends WebViewAmazonBase {
     public void clickProductBtn(){
         productBtn.click();
     }
-
 
 }

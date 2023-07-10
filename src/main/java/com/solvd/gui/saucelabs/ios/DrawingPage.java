@@ -8,6 +8,7 @@ import org.openqa.selenium.WebDriver;
 
 @DeviceType(pageType = DeviceType.Type.IOS_PHONE, parentClass = DrawingPageBase.class)
 public class DrawingPage extends DrawingPageBase {
+
     public DrawingPage(WebDriver driver) {
         super(driver);
     }
@@ -64,7 +65,7 @@ public class DrawingPage extends DrawingPageBase {
     }
 
     @Override
-    public void clickGoBtn() {
+    public void clickOkBtn() {
         okBtn.click();
     }
 

@@ -13,4 +13,5 @@ public abstract class ProductPageBase extends AbstractPage implements IMobileUti
     public abstract void clickAddToCart();
 
     public abstract void getPrice();
+
 }

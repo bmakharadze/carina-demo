@@ -10,12 +10,14 @@ import org.openqa.selenium.WebDriver;
 
 @DeviceType(pageType = DeviceType.Type.IOS_PHONE, parentClass = CheckoutPageBase.class)
 public class CheckoutPage extends CheckoutPageBase {
+
     public CheckoutPage(WebDriver driver) {
         super(driver);
     }
 
     @ExtendedFindBy(iosClassChain = "label == \"CHECKOUT: INFORMATION\" AND name == \"CHECKOUT: INFORMATION\" AND value == \"CHECKOUT: INFORMATION\"")
     private ExtendedWebElement randomPlace;
+
     @ExtendedFindBy(accessibilityId = "test-First Name")
     private ExtendedWebElement firstNameInput;
 

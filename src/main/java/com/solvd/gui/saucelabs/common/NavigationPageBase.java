@@ -3,6 +3,7 @@ import com.qaprosoft.carina.core.gui.AbstractPage;
 import org.openqa.selenium.WebDriver;
 
 public abstract class NavigationPageBase extends AbstractPage {
+
     public NavigationPageBase(WebDriver driver) {
         super(driver);
     }
@@ -23,6 +24,6 @@ public abstract class NavigationPageBase extends AbstractPage {
 
     public abstract void clickResetAppBtn();
 
-
     public abstract void clickCloseBtn();
+
 }
