@@ -17,6 +17,7 @@ public class HomePage extends HomePageBase {
     public HomePage(WebDriver driver) {
         super(driver);
     }
+
     @ExtendedFindBy(iosClassChain = "**/XCUIElementTypeOther[`label == '%s'`]")
     private ExtendedWebElement filter;
 

@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite verbose="1" name="Test - IOS - Saucelabs" parallel="methods">
+
+    <parameter name="jenkinsJobName" value="IOS Test - Saucelabs"/>
+    <parameter name="jenkinsJobType" value="android"/>
+
+    <test name="IOS Test - Saucelabs">
+        <classes>
+            <class name="com.solvd.saucelabs.SauceLabsTest" />
+        </classes>
+    </test>
+
+</suite>
