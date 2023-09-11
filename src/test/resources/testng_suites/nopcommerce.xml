@@ -1,7 +1,7 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite verbose="1" name="Carina Test - Nop Commerce Test" parallel="methods">
 
-    <test name="Amazon Home Page Tests">
+    <test name="WEB Nop Commerce">
         <classes>
             <class name="com.solvd.gui.nopcommerce.web.NopCommerce" />
         </classes>
