@@ -26,7 +26,7 @@ public class CartPage extends CartPageBase {
 
     @Override
     public boolean isPageOpened() {
-        return checkoutBtn.isElementPresent();
+        return keepShoppingBtn.isElementPresent();
     }
 
     @Override
