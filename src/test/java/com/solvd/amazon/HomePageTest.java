@@ -2,6 +2,7 @@ package com.solvd.amazon;
 
 import com.qaprosoft.carina.core.foundation.AbstractTest;
 import com.solvd.gui.amazon.pages.*;
+import com.zebrunner.agent.core.annotation.Maintainer;
 import com.zebrunner.agent.core.annotation.TestRailCaseId;
 import com.zebrunner.agent.core.registrar.TestRail;
 import org.testng.Assert;
@@ -16,6 +17,7 @@ public class HomePageTest extends AbstractTest {
         TestRail.setAssignee("Beka Makharadze");
     }
     @Test
+    @Maintainer("bmakharadze")
     @TestRailCaseId("3482")
     public void amazonTest() {
         HomePage homePage = new HomePage(getDriver());
@@ -36,6 +38,7 @@ public class HomePageTest extends AbstractTest {
     }
 
     @Test
+    @Maintainer("bmakharadze")
     @TestRailCaseId("3483")
     public void amazonLaptopTest() {
         HomePage homePage = new HomePage(getDriver());
