@@ -20,4 +20,10 @@ public class HomePage extends HomePageBase{
         return desktopsBtn.isElementPresent();
     }
 
+    @Override
+    public DesktopsPage clickDesktopsBtn() {
+        desktopsBtn.click();
+        return new DesktopsPage(getDriver());
+    }
+
 }

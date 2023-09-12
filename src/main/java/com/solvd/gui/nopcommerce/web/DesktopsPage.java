@@ -21,4 +21,12 @@ public class DesktopsPage extends DesktopsPageBase {
         return productBtn.isElementPresent();
     }
 
+    @Override
+    public ProductPage clickProduct() {
+        productBtn.getText();
+        productBtn.click();
+        return new ProductPage(getDriver());
+    }
+
+
 }
