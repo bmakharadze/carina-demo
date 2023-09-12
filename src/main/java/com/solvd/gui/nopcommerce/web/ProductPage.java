@@ -25,7 +25,7 @@ public class ProductPage extends ProductPageBase {
     @Override
     public void clickAddToCartBtn() {
         addToCartBtn.click();
-        z
+
     }
 
 
